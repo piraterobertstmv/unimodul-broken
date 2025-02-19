@@ -1,3 +1,4 @@
+
 import { useState } from "react"
 import { MessageCircle } from "lucide-react"
 import { Button } from "@/components/ui/button"
@@ -29,7 +30,11 @@ export const Chatbot = () => {
 
     try {
       const { data, error } = await supabase.functions.invoke('chat-with-gemini', {
-        body: { message: userMessage }
+        body: { message: userMessage },
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${supabase.auth.session()?.access_token}`
+        }
       })
 
       if (error) {
@@ -42,11 +47,11 @@ export const Chatbot = () => {
       }
 
       setMessages(prev => [...prev, { text: data.response, isBot: true }])
-    } catch (error) {
+    } catch (error: any) {
       console.error('Error:', error)
       toast.error("Lo siento, ha ocurrido un error al procesar tu mensaje. Por favor, inténtalo de nuevo.")
       setMessages(prev => [...prev, { 
-        text: "Lo siento, ha ocurrido un error. Por favor, inténtalo de nuevo.", 
+        text: "Lo siento, ha ocurrido un error al conectar con el asistente. Por favor, inténtalo de nuevo más tarde.", 
         isBot: true 
       }])
     } finally {

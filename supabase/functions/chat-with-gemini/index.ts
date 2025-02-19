@@ -1,3 +1,4 @@
+
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts"
 
 const corsHeaders = {
@@ -33,12 +34,17 @@ Our values:
 Please provide accurate, helpful information about our products, pricing, and services. Be friendly and professional in your responses.`
 
 serve(async (req) => {
+  // Handle CORS preflight requests
   if (req.method === 'OPTIONS') {
     return new Response('ok', { headers: corsHeaders })
   }
 
   try {
     const { message } = await req.json()
+
+    if (!message) {
+      throw new Error('Message is required')
+    }
 
     const GEMINI_API_KEY = Deno.env.get('GEMINI_API_KEY')
     if (!GEMINI_API_KEY) {
@@ -75,6 +81,10 @@ serve(async (req) => {
       }),
     })
 
+    if (!response.ok) {
+      throw new Error(`Gemini API error: ${response.status} ${response.statusText}`)
+    }
+
     const data = await response.json()
     const aiResponse = data.candidates[0].content.parts[0].text
 
@@ -90,7 +100,10 @@ serve(async (req) => {
   } catch (error) {
     console.error('Error:', error)
     return new Response(
-      JSON.stringify({ error: error.message }),
+      JSON.stringify({ 
+        error: error.message,
+        details: error.stack 
+      }),
       {
         status: 500,
         headers: {
