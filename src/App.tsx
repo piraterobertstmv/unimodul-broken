@@ -1,3 +1,4 @@
+
 import { Routes, Route } from "react-router-dom";
 import { Toaster } from "@/components/ui/toaster";
 import { ScrollToTop } from "@/components/ScrollToTop";
@@ -33,8 +34,6 @@ import Inversores from "@/pages/Inversores";
 import "./App.css";
 
 function App() {
-  console.info("App component rendering");
-
   return (
     <>
       <ScrollToTop />
@@ -64,6 +63,7 @@ function App() {
         <Route path="/financiacion-empresas" element={<FinanciacionEmpresas />} />
         <Route path="/financiacion-inversores" element={<FinanciacionInversores />} />
         <Route path="/inversores" element={<Inversores />} />
+        <Route path="*" element={<Index />} /> {/* This will catch all unmatched routes */}
       </Routes>
       <Chatbot />
       <Toaster />
