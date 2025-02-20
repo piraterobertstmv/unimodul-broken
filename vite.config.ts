@@ -8,11 +8,11 @@ export default defineConfig(({ mode }) => ({
   server: {
     host: "::",
     port: 8080,
+    allowedHosts: ["5dcfdd93-c35e-4287-92d9-252f8002148f.lovableproject.com"],
   },
   plugins: [
     react(),
-    mode === 'development' &&
-    componentTagger(),
+    mode === "development" && componentTagger(),
   ].filter(Boolean),
   resolve: {
     alias: {
@@ -20,3 +20,4 @@ export default defineConfig(({ mode }) => ({
     },
   },
 }));
+
