@@ -1,3 +1,4 @@
+
 import { useState, useEffect, useRef } from 'react';
 import { cn } from '@/lib/utils';
 import { useNavigate } from 'react-router-dom';
@@ -7,25 +8,25 @@ const models = [
     id: 1,
     name: 'MOD.STUDIO',
     image: '/lovable-uploads/523c87b3-077e-4573-81c7-1671f244b05f.png',
-    route: '/productos/mod-studio'
+    route: '/mod-studio'
   },
   {
     id: 2,
     name: 'MOD.ONE',
     image: '/lovable-uploads/9c9e36b7-8ce0-4ada-a28a-e483720a4b6f.png',
-    route: '/productos/mod-one'
+    route: '/mod-one'
   },
   {
     id: 3,
     name: 'MOD.TWO',
     image: '/lovable-uploads/7f30f145-9c17-4375-84f4-bc50e7ae1e12.png',
-    route: '/productos/mod-two'
+    route: '/mod-two'
   },
   {
     id: 4,
     name: 'MOD.LIBRE',
     image: '/lovable-uploads/298a4051-327c-4efd-9e25-e6ab9933b6e9.png',
-    route: '/productos/mod-libre'
+    route: '/mod-libre'
   }
 ];
 
@@ -56,7 +57,7 @@ export const ModelsShowcase = () => {
   }, []);
 
   const handleModelClick = (route: string) => {
-    console.log('Navigating to:', route); // Add logging
+    console.log('Navigating to:', route);
     navigate(route);
   };
 
