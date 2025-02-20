@@ -63,7 +63,7 @@ function App() {
         <Route path="/financiacion-empresas" element={<FinanciacionEmpresas />} />
         <Route path="/financiacion-inversores" element={<FinanciacionInversores />} />
         <Route path="/inversores" element={<Inversores />} />
-        <Route path="*" element={<Index />} /> {/* This will catch all unmatched routes */}
+        <Route path="*" element={<Index />} />
       </Routes>
       <Chatbot />
       <Toaster />
