@@ -66,7 +66,6 @@ function App() {
         <Route path="/nosotros" element={<About />} />
         <Route path="*" element={<Index />} />
       </Routes>
-      <Chatbot />
       <Toaster />
     </>
   );
