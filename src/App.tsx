@@ -67,6 +67,7 @@ function App() {
         <Route path="*" element={<Index />} />
       </Routes>
       <Toaster />
+      <Chatbot />
     </>
   );
 }
