@@ -63,6 +63,7 @@ function App() {
         <Route path="/financiacion-empresas" element={<FinanciacionEmpresas />} />
         <Route path="/financiacion-inversores" element={<FinanciacionInversores />} />
         <Route path="/inversores" element={<Inversores />} />
+        <Route path="/nosotros" element={<About />} />
         <Route path="*" element={<Index />} />
       </Routes>
       <Chatbot />
