@@ -26,18 +26,27 @@ export default defineConfig(async ({ mode, command }) => {
       }
     },
     plugins: [
-      react(),
+      react({
+        jsxImportSource: 'react',
+      }),
       componentTagger && mode === 'development' ? componentTagger() : null,
     ].filter(Boolean),
     resolve: {
       alias: {
         "@": path.resolve(__dirname, "./src"),
+        "react/jsx-runtime": path.resolve(__dirname, "node_modules/react/jsx-runtime"),
+        "react/jsx-dev-runtime": path.resolve(__dirname, "node_modules/react/jsx-dev-runtime"),
       },
       dedupe: ['react', 'react-dom'],
     },
     build: {
       rollupOptions: {
-        external: ["lovable-tagger"]
+        external: ["lovable-tagger"],
+        output: {
+          manualChunks: {
+            'react-vendor': ['react', 'react-dom', 'react/jsx-runtime']
+          }
+        }
       },
       // Ensure ESM modules are properly handled
       commonjsOptions: {
@@ -46,7 +55,7 @@ export default defineConfig(async ({ mode, command }) => {
       }
     },
     optimizeDeps: {
-      include: ['react', 'react-dom'],
+      include: ['react', 'react-dom', 'react/jsx-runtime'],
       exclude: ['lovable-tagger']
     }
   };
