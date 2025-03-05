@@ -5,103 +5,43 @@
 @tailwind utilities;
 
 @layer base {
-  :root {
-    --background: 0 0% 100%;
-    --foreground: 0 0% 0%;
-    --border: 0 0% 90%;
-    --input: 0 0% 90%;
-    --ring: 0 0% 90%;
-  }
-
   body {
-    @apply bg-background text-foreground font-sans overflow-x-hidden min-h-screen;
+    @apply font-sans overflow-x-hidden min-h-screen;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-heading opacity-100;
+    @apply font-heading;
   }
 
   img {
-    @apply max-w-full h-auto will-change-transform;
+    @apply max-w-full h-auto;
   }
 }
 
-/* Ensure content is visible by default */
-.animate-on-scroll,
-.section-transition {
-  opacity: 1;
-  transform: none;
-  will-change: opacity, transform;
-  backface-visibility: hidden;
-}
+@layer components {
+  .hero-overlay {
+    background: linear-gradient(rgba(30, 42, 74, 0.4), rgba(30, 42, 74, 0.4));
+    backdrop-filter: blur(1px);
+  }
 
-/* Only apply animations if JS is enabled */
-.js .animate-on-scroll {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1),
-              transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-}
+  .feature-card {
+    @apply transition-all duration-300 hover:shadow-lg hover:scale-[1.02] hover:-translate-y-1;
+  }
 
-.js .animate-on-scroll.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
+  .nav-link {
+    @apply text-gray-700 hover:text-primary transition-colors duration-200;
+  }
 
-/* Add stagger effect for lists and grid items */
-.js .animate-on-scroll:nth-child(2) {
-  transition-delay: 0.1s;
-}
+  .cta-button {
+    @apply bg-primary text-white px-4 md:px-6 py-2 md:py-3 rounded-lg transition-all duration-200 hover:bg-opacity-90 hover:shadow-lg hover:-translate-y-0.5 text-sm md:text-base;
+  }
 
-.js .animate-on-scroll:nth-child(3) {
-  transition-delay: 0.2s;
-}
-
-.js .animate-on-scroll:nth-child(4) {
-  transition-delay: 0.3s;
-}
-
-/* Section transitions */
-.js .section-transition {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1),
-              transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.js .section-transition.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Hero overlay */
-.hero-overlay {
-  background: linear-gradient(rgba(30, 42, 74, 0.4), rgba(30, 42, 74, 0.4));
-  backdrop-filter: blur(1px);
-}
-
-/* Feature card animations */
-.feature-card {
-  @apply transition-all duration-300 hover:shadow-lg hover:scale-[1.02] hover:-translate-y-1;
-  will-change: transform;
-}
-
-/* Navigation link animations */
-.nav-link {
-  @apply text-gray-700 hover:text-primary transition-colors duration-200 relative after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-primary after:origin-bottom-right after:transition-transform after:duration-200 hover:after:scale-x-100 hover:after:origin-bottom-left;
-}
-
-/* CTA button animations */
-.cta-button {
-  @apply bg-primary text-white px-4 md:px-6 py-2 md:py-3 rounded-lg transition-all duration-200 hover:bg-primary/90 hover:shadow-lg hover:-translate-y-0.5 hover:animate-shake text-sm md:text-base;
-}
-
-/* Section padding */
-.section-padding {
-  @apply py-8 md:py-16 lg:py-24;
+  .section-padding {
+    @apply py-8 md:py-16 lg:py-24;
+  }
 }
 
 /* Mobile optimizations */
@@ -127,13 +67,4 @@
     transform: none !important;
     transition: none !important;
   }
-}
-
-/* Lazy loading styles */
-.lazy-image {
-  @apply opacity-0 transition-opacity duration-500;
-}
-
-.lazy-image.loaded {
-  @apply opacity-100;
 }
