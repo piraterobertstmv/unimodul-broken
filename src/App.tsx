@@ -1,8 +1,8 @@
-
 import { Routes, Route } from "react-router-dom";
 import { Toaster } from "@/components/ui/toaster";
 import { ScrollToTop } from "@/components/ScrollToTop";
 import { Chatbot } from "@/components/Chatbot";
+import { AnimationObserver } from "@/components/AnimationObserver";
 
 // Pages
 import Index from "@/pages/Index";
@@ -37,6 +37,7 @@ function App() {
   return (
     <>
       <ScrollToTop />
+      <AnimationObserver />
       <Routes>
         <Route path="/" element={<Index />} />
         <Route path="/sobre-nosotros" element={<About />} />
