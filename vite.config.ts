@@ -33,6 +33,7 @@ export default defineConfig(async ({ mode, command }) => {
       alias: {
         "@": path.resolve(__dirname, "./src"),
       },
+      dedupe: ['react', 'react-dom'],
     },
     build: {
       rollupOptions: {
@@ -45,6 +46,7 @@ export default defineConfig(async ({ mode, command }) => {
       }
     },
     optimizeDeps: {
+      include: ['react', 'react-dom'],
       exclude: ['lovable-tagger']
     }
   };
