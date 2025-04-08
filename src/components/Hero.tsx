@@ -8,14 +8,13 @@ export const Hero = () => {
         <div
           className="w-full md:w-[80%] h-full bg-cover bg-center"
           style={{
-            backgroundImage:
-              "url('/lovable-uploads/76932e9e-eba3-48b4-90f1-a187a6707700.png')",
+            backgroundImage: "url('/lovable-uploads/hero.jpg')",
             transformStyle: "preserve-3d",
             perspective: "1000px",
             willChange: "transform",
           }}
         >
-          <div className="absolute inset-0 hero-overlay" />
+          <div className="absolute inset-0 bg-black/30" />
         </div>
         <div className="absolute right-0 top-0 w-full md:w-[20%] h-20 md:h-full bg-black" />
       </div>
