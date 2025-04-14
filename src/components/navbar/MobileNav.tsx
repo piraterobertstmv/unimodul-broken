@@ -60,7 +60,7 @@ export const MobileNav = ({ isOpen, onClose }: MobileNavProps) => {
           <Button 
             className="w-full bg-primary hover:bg-primary/90 text-white"
             onClick={() => {
-              navigate("/designer");
+              navigate("/contacto");
               onClose();
             }}
           >

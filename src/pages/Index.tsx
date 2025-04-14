@@ -1,4 +1,3 @@
-
 import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/Hero";
 import { ImageSlider } from "@/components/ImageSlider";
@@ -7,7 +6,6 @@ import { DesignerCTA } from "@/components/sections/DesignerCTA";
 import { ProductOfferings } from "@/components/sections/ProductOfferings";
 import { ProcessSteps } from "@/components/sections/ProcessSteps";
 import { Footer } from "@/components/sections/Footer";
-import { ModelsShowcase } from "@/components/sections/ModelsShowcase";
 import { ArrowRight, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Chatbot } from "@/components/Chatbot";
@@ -26,17 +24,7 @@ const Index = () => {
       </Helmet>
       <Navbar />
       <Hero />
-      
-      {/* Title Section */}
-      <div className="py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <h2 className="text-4xl md:text-5xl font-bold text-center animate-on-scroll opacity-0 translate-x-[-100%] transition-all duration-500">
-            Nuestros Modelos
-          </h2>
-        </div>
-      </div>
-
-      <ModelsShowcase />
+  
 
       {/* Image Slider Section */}
       <section className="section-padding container mx-auto px-4">

@@ -9,10 +9,6 @@ import Index from "@/pages/Index";
 import About from "@/pages/About";
 import Contact from "@/pages/Contact";
 import Models from "@/pages/Models";
-import ModOne from "@/pages/ModOne";
-import ModTwo from "@/pages/ModTwo";
-import ModStudio from "@/pages/ModStudio";
-import ModLibre from "@/pages/ModLibre";
 import Process from "@/pages/Process";
 import Blog from "@/pages/Blog";
 import BlogPost from "@/pages/BlogPost";
@@ -43,10 +39,6 @@ function App() {
         <Route path="/sobre-nosotros" element={<About />} />
         <Route path="/contacto" element={<Contact />} />
         <Route path="/modelos" element={<Models />} />
-        <Route path="/mod-one" element={<ModOne />} />
-        <Route path="/mod-two" element={<ModTwo />} />
-        <Route path="/mod-studio" element={<ModStudio />} />
-        <Route path="/mod-libre" element={<ModLibre />} />
         <Route path="/proceso" element={<Process />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/blog/:id" element={<BlogPost />} />

@@ -78,7 +78,7 @@ const Contact = () => {
             Estamos aquí para ayudarte a crear el espacio perfecto
           </p>
 
-          <div className="grid md:grid-cols-2 gap-12 mt-12">
+          <div className="grid md:grid-cols-2 gap-20">
             {/* Contact Form */}
             <div className="bg-white p-8 rounded-lg shadow-lg animate-slideInLeft">
               <Form {...form}>
@@ -135,30 +135,35 @@ const Contact = () => {
 
             {/* Contact Information */}
             <div className="space-y-8 animate-slideInRight">
-              <div className="flex items-start space-x-4 hover:scale-105 transition-transform duration-300">
-                <Mail className="w-6 h-6 text-primary mt-1 animate-scaleIn" />
-                <div>
-                  <h3 className="text-lg font-bold mb-1">Email</h3>
+              <div className="grid grid-cols-3 gap-6 mb-8">
+                <div className="flex flex-col items-center text-center p-4 hover:scale-105 transition-transform duration-300">
+                  <Mail className="w-8 h-8 text-primary mb-3 animate-scaleIn" />
+                  <h3 className="text-lg font-bold mb-2">Email</h3>
                   <p className="text-gray-600">614169737@unimodul.es</p>
                 </div>
-              </div>
-              <div className="flex items-start space-x-4 hover:scale-105 transition-transform duration-300">
-                <Phone className="w-6 h-6 text-primary mt-1 animate-scaleIn delay-100" />
-                <div>
-                  <h3 className="text-lg font-bold mb-1">Teléfono</h3>
+                <div className="flex flex-col items-center text-center p-4 hover:scale-105 transition-transform duration-300">
+                  <Phone className="w-8 h-8 text-primary mb-3 animate-scaleIn delay-100" />
+                  <h3 className="text-lg font-bold mb-2">Teléfono</h3>
                   <p className="text-gray-600">+34 614 16 97 37</p>
                 </div>
-              </div>
-              <div className="flex items-start space-x-4 hover:scale-105 transition-transform duration-300">
-                <MapPin className="w-6 h-6 text-primary mt-1 animate-scaleIn delay-200" />
-                <div>
-                  <h3 className="text-lg font-bold mb-1">Ubicación</h3>
+                <div className="flex flex-col items-center text-center p-4 hover:scale-105 transition-transform duration-300">
+                  <MapPin className="w-8 h-8 text-primary mb-3 animate-scaleIn delay-200" />
+                  <h3 className="text-lg font-bold mb-2">Ubicación</h3>
                   <p className="text-gray-600">
                     C. del Proyecto, 19<br />
                     12500 Vinaroz, Castellón<br />
                     España
                   </p>
                 </div>
+              </div>
+              
+              {/* Contact Image */}
+              <div className="rounded-lg overflow-hidden shadow-lg animate-fadeIn">
+                <img
+                  src="/uploads/contact.jpg"
+                  alt="Unimodul Office"
+                  className="w-full h-[300px] object-cover rounded-lg transform hover:scale-105 transition-transform duration-300"
+                />
               </div>
             </div>
           </div>

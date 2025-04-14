@@ -28,7 +28,7 @@ export const DesktopNav = () => {
       </div>
       <Button 
         className="bg-primary hover:bg-primary/90 text-white"
-        onClick={() => navigate("/designer")}
+        onClick={() => navigate("/contacto")}
       >
         Diseñar Ahora
       </Button>
