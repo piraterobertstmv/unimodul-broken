@@ -5,7 +5,7 @@ import { Chatbot } from "@/components/Chatbot";
 import { AnimationObserver } from "@/components/AnimationObserver";
 
 // Pages
-import Index from "@/pages/Index";
+import Index from "@/pages/Indexx";
 import About from "@/pages/About";
 import Contact from "@/pages/Contact";
 import Models from "@/pages/Models";
