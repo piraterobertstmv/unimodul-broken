@@ -30,7 +30,6 @@ import Inversores from "@/pages/Inversores";
 import "./App.css";
 
 function App() {
-  throw new Error("App crashed intentionally");
   return (
     <>
       <ScrollToTop />
