@@ -5,7 +5,7 @@ import { Chatbot } from "@/components/Chatbot";
 import { AnimationObserver } from "@/components/AnimationObserver";
 
 // Pages
-import Index from "@/pages/Indexx";
+import Index from "@/pages/Index";
 import About from "@/pages/About";
 import Contact from "@/pages/Contact";
 import Models from "@/pages/Models";
@@ -30,6 +30,7 @@ import Inversores from "@/pages/Inversores";
 import "./App.css";
 
 function App() {
+  throw new Error("App crashed intentionally");
   return (
     <>
       <ScrollToTop />
