@@ -218,8 +218,8 @@ const blogPosts = {
 };
 
 const BlogPost = () => {
-  const { slug } = useParams();
-  const post = blogPosts[slug as keyof typeof blogPosts];
+  const { id } = useParams();
+  const post = blogPosts[id as keyof typeof blogPosts];
 
   if (!post) {
     return (
