@@ -12,7 +12,17 @@ export default defineConfig({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  ssr: {
+    noExternal: ["react", "react-dom", "react-router-dom"],
+  },
+  optimizeDeps: {
+    include: ["react", "react-dom", "react-router-dom"],
+    esbuildOptions: {
+      target: "esnext",
+    },
+  },
   build: {
+    target: "esnext",
     rollupOptions: {
       onwarn(warning, warn) {
         if (warning.code === "MODULE_LEVEL_DIRECTIVE") return;
